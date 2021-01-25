@@ -1,0 +1,73 @@
+
+{{ define "admin.register.admin.layout" }}
+
+{{ template "admin.navbar" . }}
+{{ template "admin.register.admin.content" . }}
+{{ template "admin.footer" . }}
+
+{{ end }}
+{{ define "admin.register.admin.content"}}
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h2>Admin Registration</h2>
+    </div>
+    <div class="container">
+        <form method="POST" action="/admin/register/admin" enctype="multipart/form-data">
+            <div class="form-group row">
+                <label for="username" class="col-sm-2 col-form-label">User Name</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="username" id="username" placeholder="username">
+                </div>
+            </div>
+            <div class="form-group row">
+            <label for="password" class="col-sm-2 col-form-label">Password</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" name="password" id="password" placeholder="password">
+            </div>
+       </div>
+            <div class="form-group row">
+            <label for="fname" class="col-sm-2 col-form-label">First Name</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" name="fname" id="fname" placeholder="first name">
+    </div>
+    </div>
+            <div class="form-group row">
+            <label for="lname" class="col-sm-2 col-form-label">Last Name</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" name="lname" id="lname" placeholder="last name">
+    </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="id" class="col-sm-2 col-form-label">ID</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" name="id" id="id" placeholder="id">
+        </div>
+        </div>
+
+            <div class="form-group row">
+    <label for="email" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" name="email" id="email" placeholder="email">
+    </div>
+    <div class="form-group">
+        <label for="catimg" class="col-sm-2 col-form-label">Upload Image</label>
+        <div class="col-sm-10">
+            <input type="file" class="form-control-file" name="catimg" id="catimg">
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-10">
+            <button type="submit" class="btn btn-primary float-right">signup</button>
+        </div>
+    </div>
+
+    </form>
+
+    </div>
+
+</main>
+
+
+{{ end }}

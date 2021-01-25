@@ -1,0 +1,35 @@
+{{ define "student.notification.layout" }}
+    {{ template "student.navbar" . }}
+    {{ template "student.notification.content" . }}
+    {{ template "student.footer" . }}
+{{ end }}
+{{ define "student.notification.content"}}
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+    <div
+        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h2>Notification</h2>
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">NotifiedBy</th>
+            <th scope="col">Message</th>
+              <th scope="col">Date</th>
+
+
+          </tr>
+        </thead>
+        <tbody>
+            {{ range . }}
+          <tr>
+            <td> {{ .NotifyName }} </td>
+            <td> {{ .Message }} </td>
+              <td> {{ .NotificationDate }} </td>
+
+          </tr>
+          {{ end }}
+          </tbody>
+          </table>
+</main>
+{{ end }}

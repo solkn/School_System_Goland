@@ -1,0 +1,70 @@
+{{ define "teacher.profile.layout" }}
+
+    {{ template "teacher.navbar" . }}
+    {{ template "teacher.profile.content" . }}
+    {{ template "teacher.footer" . }}
+
+{{ end }}
+
+{{ define "teacher.profile.content"}}
+    <section>
+        {{ range . }}
+        <section id="about" class="home-section text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="wow bounceInUp" data-wow-delay="0.2s">
+                            <div class="team boxed-grey">
+                                <div class="inner">
+                                    <div class="avatar"><img src="../assets/img/{{ .Image }}" alt="" class="img-responsive img-circle" /></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <div class="wow bounceInUp" data-wow-delay="0.2s">
+                                    <div class="team boxed-grey">
+                                        <div class="inner">
+                                            <table>
+                                                <thead><h1>Teacher Profile</h1></thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td>User Name : {{ .UserName }}</td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>First Name : {{ .FirstName }}</td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Last Name : {{ .LastName }}</td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Email : {{ .Email }}</td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>ID  : {{ .TeacherID }}</td>
+                                                    <td></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+            {{ end }}
+    </section>
+
+{{ end }}

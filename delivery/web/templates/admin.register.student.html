@@ -1,0 +1,105 @@
+{{ define "admin.register.student.layout" }}
+
+    {{ template "admin.navbar" . }}
+    {{ template "admin.register.student.content" . }}
+    {{ template "admin.footer" . }}
+
+{{ end }}
+
+{{ define "admin.register.student.content"}}
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h2>Student Registration</h2>
+    </div>
+
+    <div class="container">
+        <form method="POST" action="/admin/register/student" enctype="multipart/form-data">
+            <input type="hidden" name="_csrf" value="{{ .CSRF }}" />
+            <div class="form-group row">
+                <label for="username" class="col-sm-2 col-form-label">User Name</label>
+                {{with .VErrors.Get "username"}}
+                <label class="text-danger">{{.}}</label>
+                {{end}}
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="username" id="username" value='{{ .Values.Get "username" }}'
+                    required autofocus placeholder='username'>
+                </div>
+            </div>
+            {{with .VErrors.Get "password"}}
+            <label class="text-danger">{{.}}</label>
+            {{end}}
+            <label for="password" class="col-sm-2 col-form-label">Password</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" name="password" id="password"  value='{{ .Values.Get "password" }}'
+                required autofocus placeholder='password'>
+            </div>
+    </div>
+    <div class="form-group row">
+    <label for="fname" class="col-sm-2 col-form-label">First Name</label>
+    {{with .VErrors.Get "fname"}}
+    <label class="text-danger">{{.}}</label>
+    {{end}}
+    <div class="col-sm-10">
+        <input type="text" class="form-control" name="fname" id="fname"  value='{{ .Values.Get "fname" }}'
+        required autofocus placeholder='fname'>
+    </div>
+    </div>
+   
+    <div class="form-group row">
+    <label for="lname" class="col-sm-2 col-form-label">Last Name</label>
+    {{with .VErrors.Get "lname"}}
+    <label class="text-danger">{{.}}</label>
+    {{end}}
+    <div class="col-sm-10">
+        <input type="text" class="form-control" name="lname" id="lname"  value='{{ .Values.Get "lname" }}'
+        required autofocus placeholder='lname'>
+    </div>
+    </div>
+    <div class="form-group row">
+    <label for="id" class="col-sm-2 col-form-label">ID</label>
+    {{with .VErrors.Get "id"}}
+    <label class="text-danger">{{.}}</label>
+    {{end}}
+    <div class="col-sm-10">
+        <input type="text" class="form-control" name="id" id="id"  value='{{ .Values.Get "id" }}'
+        required autofocus placeholder='id'>
+    </div>
+    </div>
+    <div class="form-group row">
+    <label for="email" class="col-sm-2 col-form-label">Email</label>
+    {{with .VErrors.Get "email"}}
+    <label class="text-danger">{{.}}</label>
+    {{end}}
+    <div class="col-sm-10">
+        <input type="text" class="form-control" name="email" id="email"  value='{{ .Values.Get "email" }}'
+        required autofocus placeholder='email'>
+    </div>
+    </div>
+    <div class="form-group row">
+    <label for="grade" class="col-sm-2 col-form-label">Grade</label>
+    {{with .VErrors.Get "grade"}}
+    <label class="text-danger">{{.}}</label>
+    {{end}}
+    <div class="col-sm-10">
+        <input type="text" class="form-control" name="grade" id="grade"  value='{{ .Values.Get "grade" }}'
+        required autofocus placeholder='grade'>
+    </div>
+    <div class="form-group">
+        <label for="catimg" class="col-sm-2 col-form-label">Upload Image</label>
+        <div class="col-sm-10">
+            <input type="file" class="form-control-file" name="catimg" id="catimg">
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-10">
+            <button type="submit" class="btn btn-primary float-right">register</button>
+        </div>
+    </div>
+    </form>
+    </div>
+</main>
+
+
+
+{{end}}

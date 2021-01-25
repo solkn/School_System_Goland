@@ -1,0 +1,39 @@
+{{ define "admin.course.new.layout" }}
+
+{{ template "admin.navbar" . }}
+{{ template "admin.course.new.content" . }}
+{{ template "admin.footer" . }}
+
+{{ end }}
+
+{{ define "admin.course.new.content"}}
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+    <div
+        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h2>Courses</h2>
+    </div>
+    <form method="POST" action="/admin/course/new" enctype="multipart/form-data">
+
+    </div><label for="fname" class="col-sm-2 col-form-label">Course Name</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" name="coursename" id="coursename" placeholder="course name">
+    </div>
+    </div><label for="courseid" class="col-sm-2 col-form-label">Course ID</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" name="courseid" id="courseid" placeholder="course id">
+    </div>
+
+<label for="grade" class="col-sm-2 col-form-label">Grade</label>
+<div class="col-sm-10">
+    <input type="text" class="form-control" name="grade" id="grade" placeholder="course id">
+</div>
+
+    
+    <div class="form-group row">
+        <div class="col-sm-10">
+            <button type="submit" class="btn btn-primary float-right">submit</button>
+        </div>
+    </div>
+    </form>
+</main>
+{{ end }}

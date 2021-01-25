@@ -1,0 +1,51 @@
+{{ define "admin.view.student.layout" }}
+{{ template "admin.navbar" . }}
+{{ template "admin.view.student.content" . }}
+{{ template "admin.footer" . }}
+{{ end }}
+
+{{ define "admin.view.student.content"}}
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <div
+                class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h2>students</h2>
+        </div>
+
+
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">UserName</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">ID</th>
+                <th scope="col">Email</th>
+                <th scope="col">Grade</th>
+                <th scope="col">Image</th>
+
+
+
+
+            </tr>
+            </thead>
+            <tbody>
+            {{ range . }}
+                <tr>
+                    <td> {{ .UserName }} </td>
+                    <td> {{ .FirstName }} </td>
+                    <td> {{ .LastName }} </td>
+                    <td> {{ .ID }} </td>
+                    <td> {{ .Email }} </td>
+                    <td> {{ .Grade }} </td>
+
+
+                    <td> <img src="../assets/img/{{ .Image }}" width="70rem" height="70rem" /> </td>
+                    <td> <a href="/admin/student/delete?id={{ .ID }}">dismiss</a> </td>
+
+                </tr>
+            {{ end }}
+            </tbody>
+        </table>
+    </main>
+{{ end }}
